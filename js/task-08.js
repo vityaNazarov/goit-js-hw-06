@@ -9,13 +9,13 @@ refs.form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-  const {
-    elements: { login, password },
-  } = event.currentTarget;
+  const user = {};
+  user.email = refs.email.value;
+  user.password = refs.password.value;
 
   if (refs.email.value === "" || refs.password.value === "") {
     alert("Заполните пожалуйста все поля!");
   }
-  console.log(`Email: ${refs.email.value}, Password: ${refs.password.value}`);
+  console.log(user);
   event.currentTarget.reset();
 }
